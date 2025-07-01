@@ -1,0 +1,91 @@
+.calculator {
+  width: 320px;
+  height: 520px;
+  background-color: black;
+  border-radius: 50px;
+  padding: 20px;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.calculator-display {
+  font-size: 80px;
+  font-weight: 300;
+  height: 120px;
+  padding: 20px;
+  text-align: right;
+  overflow: hidden;
+}
+
+.calculator-keypad {
+  height: 400px;
+  display: flex;
+}
+
+.input-keys {
+  width: 240px;
+}
+
+.function-keys {
+  display: flex;
+}
+
+.digit-keys {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.calculator-key {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  border: none;
+  font-size: 24px;
+  color: white;
+  background-color: #333;
+  margin: 8px;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  transition: background-color 0.2s;
+}
+
+.calculator-key:active {
+  background-color: #555;
+}
+
+.function-keys .calculator-key {
+  background-color: #a5a5a5;
+  color: black;
+}
+
+.function-keys .calculator-key:active {
+  background-color: #d9d9d9;
+}
+
+.operator-keys .calculator-key {
+  background-color: #f1a33c;
+}
+
+.operator-keys .calculator-key:active {
+  background-color: #f8c989;
+}
+
+.key-0 {
+  width: 168px !important;
+  text-align: left;
+  padding-left: 32px;
+}
+
+.key-dot {
+  font-weight: 900;
+}
+
+.input-keys {
+  width: 240px;
+}
+
+.operator-keys {
+  display: flex;
+  flex-direction: column;
+}
