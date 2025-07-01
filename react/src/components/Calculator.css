@@ -1,91 +1,102 @@
+/* Calculator.css */
+
+:root {
+  --background-color: #1c1c1c;
+  --display-color: #fff;
+  --function-button-color: #a5a5a5;
+  --operation-button-color: #ff9500;
+  --number-button-color: #333333;
+  --button-text-color: #fff;
+  --button-size: 70px;
+  --button-font-size: 30px;
+  --display-font-size: 60px;
+}
+
 .calculator {
-  width: 320px;
-  height: 520px;
-  background-color: black;
-  border-radius: 50px;
+  background-color: var(--background-color);
+  border-radius: 20px;
   padding: 20px;
-  color: white;
-  font-family: Arial, sans-serif;
+  width: 300px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-.calculator-display {
-  font-size: 80px;
-  font-weight: 300;
-  height: 120px;
-  padding: 20px;
+.display {
+  background-color: var(--background-color);
+  color: var(--display-color);
+  font-size: var(--display-font-size);
   text-align: right;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-.calculator-keypad {
-  height: 400px;
-  display: flex;
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
 
-.input-keys {
-  width: 240px;
-}
-
-.function-keys {
-  display: flex;
-}
-
-.digit-keys {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.calculator-key {
-  width: 80px;
-  height: 80px;
-  border-radius: 40px;
+.button {
+  width: var(--button-size);
+  height: var(--button-size);
+  border-radius: 50%;
   border: none;
-  font-size: 24px;
-  color: white;
-  background-color: #333;
-  margin: 8px;
+  font-size: var(--button-font-size);
+  color: var(--button-text-color);
   cursor: pointer;
-  user-select: none;
-  outline: none;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease;
 }
 
-.calculator-key:active {
-  background-color: #555;
+.button:hover {
+  opacity: 0.8;
 }
 
-.function-keys .calculator-key {
-  background-color: #a5a5a5;
-  color: black;
+.button:active {
+  transform: scale(0.95);
 }
 
-.function-keys .calculator-key:active {
-  background-color: #d9d9d9;
+.function {
+  background-color: var(--function-button-color);
+  color: #000;
 }
 
-.operator-keys .calculator-key {
-  background-color: #f1a33c;
+.operation {
+  background-color: var(--operation-button-color);
 }
 
-.operator-keys .calculator-key:active {
-  background-color: #f8c989;
+.number {
+  background-color: var(--number-button-color);
 }
 
-.key-0 {
-  width: 168px !important;
-  text-align: left;
-  padding-left: 32px;
+.zero {
+  grid-column: span 2;
+  width: auto;
+  border-radius: 35px;
 }
 
-.key-dot {
-  font-weight: 900;
+/* Responsive design */
+@media (max-width: 350px) {
+  :root {
+    --button-size: 60px;
+    --button-font-size: 24px;
+    --display-font-size: 48px;
+  }
+
+  .calculator {
+    width: 260px;
+  }
 }
 
-.input-keys {
-  width: 240px;
+/* Subtle animation for button press */
+@keyframes buttonPress {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
 }
 
-.operator-keys {
-  display: flex;
-  flex-direction: column;
+.button:active {
+  animation: buttonPress 0.1s ease;
 }
